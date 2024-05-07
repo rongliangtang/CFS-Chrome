@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Securefs Chrome",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "<all_urls>"
+  ],
+  "host_permissions": [
+    "https://onedrive.live.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://onedrive.live.com/*"],
+      "js": ["cryptojs/cryptojs-aes_0.2.0.min.js", "cryptojs/cryptojs-mode-ctr_0.2.0.min.js", "cryptojs/all_0.2.0.min.js", "cryptojs/cryptojs-mode-ecb_0.2.0.min.js", "utils/decrypt.js", "content.js"]
+    }
+  ]
+}
