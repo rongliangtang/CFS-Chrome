@@ -12,7 +12,7 @@ function setupListener(callback) {
 // 处理来自内容脚本的消息，根据消息类型添加或移除规则
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'try_download' || message.type === 'try_preview') {
-        console.log("receive " + message.type);
+        console.log("receive " + message.type);    
         setupListener(info => {
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
                 if (tabs.length > 0) {
@@ -55,7 +55,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                             ]
                         },
                         condition: {
-                            urlFilter: "https://public.dm.files.1drv.com/*",
+                            urlFilter: "https://*.dm.files.1drv.com/*",
                             resourceTypes: ["main_frame", "sub_frame", "xmlhttprequest", "other"]
                         }
                     }
@@ -104,7 +104,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                             ]
                         },
                         condition: {
-                            urlFilter: "https://public.dm.files.1drv.com/*",
+                            urlFilter: "https://*.dm.files.1drv.com/*",
                             resourceTypes: ["main_frame", "sub_frame", "xmlhttprequest", "other"]
                         }
                     }
