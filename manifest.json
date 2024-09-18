@@ -21,7 +21,7 @@
   "content_scripts": [
     {
       "matches": ["https://onedrive.live.com/*"],
-      "js": ["cryptojs/cryptojs-aes_0.2.0.min.js", "cryptojs/cryptojs-mode-ctr_0.2.0.min.js", "cryptojs/all_0.2.0.min.js", "cryptojs/cryptojs-mode-ecb_0.2.0.min.js", "utils/decrypt.js", "content.js"]
+      "js": ["lib/cryptojs/cryptojs-aes_0.2.0.min.js", "lib/cryptojs/cryptojs-mode-ctr_0.2.0.min.js", "lib/cryptojs/all_0.2.0.min.js", "lib/cryptojs/cryptojs-mode-ecb_0.2.0.min.js", "utils/code.js", "utils/other.js", "cfs/securefs.js", "content.js"]
     }
   ],
   "options_page": "options.html"
