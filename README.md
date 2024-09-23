@@ -12,7 +12,13 @@ CFS-Chrome 浏览器插件旨在简化这一过程，提升加密文件系统的
 
 
 ## 使用演示
-![demo](https://blog-1259405505.cos.ap-guangzhou.myqcloud.com/CFS-Chrome-Demo.gif)
+<p align="center">
+  <img
+    alt="logo"
+    src="https://blog-1259405505.cos.ap-guangzhou.myqcloud.com/CFS-Chrome-Demo-1.gif"
+    width="600"
+  />
+</p>
 
 安装浏览器插件后，按照以下步骤操作：
 1. 从云存储中下载配置文件
