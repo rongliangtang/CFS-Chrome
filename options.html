@@ -4,29 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Decryptor</title>
+    <title>Load Configuration</title>
     <style>
-        /* body {
+        body {
             font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f8f9fa;
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 90vh;
-        } */
-
-        body {
-            margin: 0px;
+            background-color: #f8f9fa;
         }
 
         .wrapper {
             background-color: #fff;
-            /* border-radius: 10px;
-            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1); */
             padding: 20px;
-            width: 300px;
-            /* margin-top: 20px; */
+            margin-bottom: 150px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
         }
 
         .input-group {
@@ -128,6 +124,8 @@
     </div>
     <script type="text/javascript" src="lib/scrypt/buffer.js"></script>
     <script type="text/javascript" src="lib/scrypt/scrypt.js"></script>
+    <script type="text/javascript" src="lib/text-encoder-lite.min.js"></script>
+    <script type="text/javascript" src="utils/argon2id.js"></script>
     <script type="text/javascript" src="utils/code.js"></script>
     <script type="text/javascript" src="cfs/securefs.js"></script>
     <script src="options.js"></script>

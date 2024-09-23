@@ -150,4 +150,27 @@ function hexStringToArrayBuffer(hexString) {
     }
     return bytes;
   }
+
+/**
+ * 将十六进制字符串转换为 Uint8Array
+ * @param {string} hexString - 要转换的十六进制字符串
+ * @returns {Uint8Array} - 转换后的 Uint8Array
+ */
+function hexStringToArray(hexString) {
+  // 去掉可能的空格，并确保长度为偶数
+  if (hexString.length % 2 !== 0) {
+      throw new Error("Invalid hex string");
+  }
+
+  // 创建 Uint8Array，长度为 hex 字符串的 1/2
+  const byteArray = new Uint8Array(hexString.length / 2);
+
+  // 每两个字符转换为一个字节
+  for (let i = 0; i < hexString.length; i += 2) {
+      byteArray[i / 2] = parseInt(hexString.substr(i, 2), 16);
+  }
+
+  // 使用 Array.from 将 Uint8Array 转换为普通数组
+  return Array.from(byteArray);
+}
   

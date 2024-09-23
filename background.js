@@ -108,3 +108,49 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     chrome.tabs.sendMessage(tabId, { type: 'routeUpdate', content: tab });
   }
 });
+
+/**
+ * argon2id 算法模块
+ *
+ * 描述：
+ * 基于 wasm 进行 argon2id 算法的操作
+ */
+// 引入 JavaScript 文件（argon2-bundled.min.js）
+importScripts('node_modules/argon2-browser/dist/argon2-bundled.min.js');
+
+// 监听消息，执行哈希计算
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === 'argon2id') {
+    const { password, salt, iterations, mem, hashLen, parallelism} = message;
+
+    // 调用 argon2.hash 进行哈希计算
+    argon2.hash({
+      pass: password,
+      salt: salt,
+      time: 9, // 迭代次数
+      mem: 262144, // 使用的内存 (KiB)
+      hashLen: 32, // 哈希长度
+      parallelism: 4, // 并行度
+      type: argon2.ArgonType.Argon2id // 哈希类型
+    })
+    .then(res => {
+      // 返回结果给发送消息的页面
+      sendResponse({
+        success: true,
+        hashHex: res.hashHex,
+        encoded: res.encoded
+      });
+    })
+    .catch(err => {
+      sendResponse({
+        success: false,
+        error: err.message
+      });
+    });
+
+    // 表示 sendResponse 会异步调用
+    return true;
+  }
+});
+
+

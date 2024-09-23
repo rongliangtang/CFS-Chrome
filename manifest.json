@@ -9,12 +9,19 @@
     "declarativeNetRequest",
     "declarativeNetRequestFeedback"
   ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
   "host_permissions": [
     "https://onedrive.live.com/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
+  "web_accessible_resources": [{
+    "resources": ["node_modules/argon2-browser/dist/argon2.wasm", "node_modules/argon2-browser/dist/argon2-simd.wasm"],
+    "matches": ["<all_urls>"]
+  }],
   "action": {
     "default_popup": "popup.html"
   },

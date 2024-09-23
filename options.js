@@ -20,7 +20,7 @@ document.getElementById("decrypt-config").addEventListener("click", async () => 
         if (password) {
           try {
             // 调用解密配置文件的函数
-            await decryptConfig(configData, password);
+            await decryptConfigByArgon2id(configData, password);
   
             // 清空输入框
             configFileInput.value = "";
