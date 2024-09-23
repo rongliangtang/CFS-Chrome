@@ -15,7 +15,7 @@ CFS-Chrome 浏览器插件旨在简化这一过程，提升加密文件系统的
 <p align="center">
   <img
     alt="logo"
-    src="https://blog-1259405505.cos.ap-guangzhou.myqcloud.com/CFS-Chrome-Demo-1.gif"
+    src="./resources/CFS-Chrome-Demo.gif"
     width="600"
   />
 </p>
