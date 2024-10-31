@@ -2,7 +2,7 @@
   <img
     alt="#"
     src="../resources/cfs_browser_extension_architecture.jpg"
-    width="300"
+    width="500"
   />
 </p>
 

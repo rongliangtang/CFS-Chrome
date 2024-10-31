@@ -38,7 +38,7 @@ CFS-Chrome 浏览器插件旨在简化这一过程，提升加密文件系统的
   <img
     alt="#"
     src="./resources/how_cfs_extension_work.jpg"
-    width="200"
+    width="250"
   />
 </p>
 
