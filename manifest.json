@@ -7,13 +7,17 @@
     "activeTab",
     "tabs",
     "declarativeNetRequest",
-    "declarativeNetRequestFeedback"
+    "declarativeNetRequestFeedback",
+    "downloads",
+    "system.cpu",
+    "system.memory"
   ],
   "content_security_policy": {
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
   },
   "host_permissions": [
-    "https://onedrive.live.com/*"
+    "https://onedrive.live.com/*",
+    "https://www.dropbox.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -27,7 +31,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://onedrive.live.com/*"],
+      "matches": ["https://onedrive.live.com/*", "https://www.dropbox.com/*"],
       "js": ["lib/cryptojs/cryptojs-aes_0.2.0.min.js", "lib/cryptojs/cryptojs-mode-ctr_0.2.0.min.js", "lib/cryptojs/all_0.2.0.min.js", "lib/cryptojs/cryptojs-mode-ecb_0.2.0.min.js", "utils/code.js", "utils/other.js", "cfs/securefs.js", "content.js"]
     }
   ],
